@@ -38,7 +38,7 @@ public class Vendedor extends Empleado {
     }
 
     public void calcularSueldoMensual() {
-        super.setSueldoFinal(this.sueldoBase * comisionPorVentas);
+        super.setSueldoFinal(this.sueldoBase +(this.sueldoBase * comisionPorVentas));
     }
 
 }

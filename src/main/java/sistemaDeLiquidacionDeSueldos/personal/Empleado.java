@@ -46,7 +46,8 @@ private  double sueldoFinal;
         return "-----------------------------------------------"+
                 "\nEmpleado: " +nombre+
                 "\nid: " + id +
-                "\nlegajo: " + legajo;
+                "\nlegajo: " + legajo+
+                "\nSueldoTotal= "+ sueldoFinal;
     }
     public abstract void  calcularSueldoMensual();
 }

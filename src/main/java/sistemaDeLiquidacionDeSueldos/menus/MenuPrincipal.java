@@ -11,6 +11,7 @@ public class MenuPrincipal {
 
     public void iniciar() {
         String menu = """
+                ---------------------------------------
                 Elija una opcion
                 1- Buscar un empleado
                 2- Editar
@@ -32,7 +33,7 @@ public class MenuPrincipal {
 
 
             switch (o) {
-                case "1" -> gestorPersonal.buscar();
+                case "1" ->  System.out.println(gestorPersonal.buscar().toString());
                 case "2" -> gestorPersonal.editar();
                 case "3" -> gestorPersonal.eliminar();
                 case "4" -> gestorPersonal.calcularsueldoAUnEmpleado();

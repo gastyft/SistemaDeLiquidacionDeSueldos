@@ -31,7 +31,7 @@ public class GestorPersonal {
             empleadoList.add(empleado6);
             Empleado empleado7 = new Repartidor("Mariano Werner", 50.3);
             empleadoList.add(empleado7);
-            Empleado empleado8 = new Administrador("The Weekend", AreaAdministrador.VENTAS);
+            Empleado empleado8 = new Administrador("The Weeknd", AreaAdministrador.VENTAS);
             empleadoList.add(empleado8);
             Empleado empleado9 = new Vendedor("Niko Hülkenberg", 4);
             empleadoList.add(empleado9);
@@ -82,11 +82,13 @@ public class GestorPersonal {
                 if (empleadoAEditar instanceof Repartidor repartidor) {
                     System.out.println("Ingrese Kilometros ");
                     repartidor.setKilometrosRecorridos(scanner.nextDouble());
+                    repartidor.calcularSueldoMensual();
                     repartidor.setNombre(nuevoNombre);
                 } else if (empleadoAEditar instanceof Vendedor vendedor) {
                     System.out.println("Ingrese nueva cantidad de ventas");
                     vendedor.setCantVentas(scanner.nextInt());
                     vendedor.setNombre(nuevoNombre);
+                    vendedor.calcularSueldoMensual();
                 } else if (empleadoAEditar instanceof Administrador administrador) {
                     System.out.println("Ingrese nueva aerea 1- ventas, 2-Logistica o 3-Finanzas");
                     String o = scanner.nextLine().toUpperCase();
@@ -141,11 +143,10 @@ catch (Exception e){
     public void calcularsueldoAUnEmpleado() {
         try {
 
-
             Empleado empleadoACalcular = buscar();
             if (empleadoACalcular != null) {
                 empleadoACalcular.calcularSueldoMensual();
-                empleadoACalcular.toString();
+                System.out.println(empleadoACalcular.toString());
             } else System.out.println("No se encontro el empleado solicitado o esta mal escrito");
         }
 catch (Exception e){
