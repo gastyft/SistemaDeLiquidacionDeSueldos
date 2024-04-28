@@ -292,8 +292,8 @@ public class GestorPersonal implements Supervisable {
                                 supervisor.getVendedorList().remove(vendedor);
                                 supervisor.calcularSueldoMensual(); //Calculo el sueldo al quitar el vendedor de la supervision
 
-                            }
-                        }
+                            }else System.out.println("El vendedor no se encuentra en esta lista");
+                        }else System.out.println("El empleado que busca no pertenece a vendedores");
                     } else System.out.println("No se encontro el vendedor a finalizar");
                 } else System.out.println("Este supervisor no tenia empleados asignados");
             } else System.out.println("No se encontro el supervisor");
